@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Cabanillas | Odontología integral en Lima</title>
+  <meta name="description" content="Consultorio dental en Lima: limpieza, ortodoncia, implantes, blanqueamiento, endodoncia y odontopediatría. Reserva online y sigue tu tratamiento en Mi Sonrisa.">
+  <meta name="theme-color" content="#0b6e99">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="firebase-config.js"></script>
+  <script src="datos.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="dental">
+  <div class="demo-note demo-only">Sitio de demostración creado por <a href="https://ziko.pro" target="_blank" rel="noopener"><b>ziko.pro</b></a> · Los datos y precios son de ejemplo.</div>
+  <div class="topbar">
+    <div class="container">
+      <span data-emerg><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 18h16v3H4zM12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/></svg> <b><span data-t="top.emerg">Urgencias dentales:</span></b> <a class="wa-link" href="#" data-aj="telefono">+51 987 654 321</a></span>
+      <span class="hide-m"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span data-aj="horario">Lun a Sáb 9:00 – 20:00 · Dom cerrado</span></span>
+      <span class="hide-m"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> <span><span data-t="top.cuotas">Pago en cuotas sin intereses</span></span></span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav">
+      <a href="./" class="brand" data-brand aria-label="Inicio"><span class="paw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><span>Dental<b> Cabanillas</b><small>Odontología integral</small></span></a>
+      <ul class="menu" id="menu">
+        <li><a href="./" data-nav="inicio" class="active" aria-current="page">Inicio</a></li>
+        <li><a href="tratamientos" data-nav="tratamientos">Tratamientos</a></li>
+        <li><a href="tienda" data-nav="tienda">Tienda</a></li>
+        <li><a href="citas" data-nav="citas">Reservar cita</a></li>
+        <li><a href="mi-sonrisa" data-nav="mi-sonrisa">Mi Sonrisa</a></li>
+        <li><a href="nosotros" data-nav="nosotros">Nosotros</a></li>
+        <li><a href="contacto" data-nav="contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="citas" class="btn btn-coral btn-sm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="btn-txt"><span data-t="nav.cta">Reservar cita</span></span></a>
+        <button class="cart-btn" aria-label="Ver carrito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count"></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="pill coral"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg> <span id="hTag">Odontología integral · Lince, Lima</span></span>
+        <h1 id="hTitle">Tu mejor sonrisa <span>empieza aquí</span></h1>
+        <p class="lead" id="hText">Dentistas especialistas, equipos digitales y precios claros. Reserva tu cita online y sigue tu tratamiento desde el celular con tu código personal.</p>
+        <div class="hero-actions">
+          <a href="citas" class="btn btn-pri"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span data-t="ini.b1">Reservar evaluación</span></a>
+          <a href="tratamientos" class="btn btn-light"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg> <span data-t="ini.b2">Ver tratamientos</span></a>
+        </div>
+        <div class="hero-trust" id="hCifras">
+          <div><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.4L7 22l5-3 5 3-1.2-8.6"/></svg></i><div><b>15 años</b>cuidando sonrisas</div></div>
+          <div><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7 13a5 5 0 0 0 10 0zM9 9h.01M15 9h.01"/></svg></i><div><b>+5,000</b>pacientes felices</div></div>
+          <div><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></i><div><b>0%</b>interés en cuotas</div></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-photo" id="hPhoto"><span class="hero-ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><img src="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=1000&q=80" alt="Dentista atendiendo a una paciente" onerror="this.remove()"></div>
+        <div class="float-card c1"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></i><div><b><span data-t="ini.f1t">Evaluación + radiografía</span></b><small><span data-t="ini.f1s">Desde S/ 50</span></small></div></div>
+        <div class="float-card c2"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></i><div><b><span data-t="ini.f2t">Cita confirmada</span></b><small><span data-t="ini.f2s">Sáb · 10:30 h · Limpieza</span></small></div></div>
+        <div class="float-card c3"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></i><div><b><span data-t="ini.f3t">Cuotas sin intereses</span></b><small><span data-t="ini.f3s">Ortodoncia e implantes</span></small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container quick" data-sec="accesos">
+    <div class="quick-box reveal">
+      <a href="citas"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i><div><b><span data-t="ini.a1t">Reservar cita</span></b><span><span data-t="ini.a1s">Elige día y hora libre</span></span></div></a>
+      <a href="mi-sonrisa"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></i><div><b><span data-t="ini.a2t">Mi Sonrisa</span></b><span><span data-t="ini.a2s">Tu tratamiento con tu código</span></span></div></a>
+      <a href="tratamientos"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></i><div><b><span data-t="ini.a3t">Tratamientos</span></b><span><span data-t="ini.a3s">Precios desde</span></span></div></a>
+      <a class="wa-link" href="#" data-emerg><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 18h16v3H4zM12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/></svg></i><div><b><span data-t="ini.a4t">Urgencias</span></b><span><span data-t="ini.a4s">Atención el mismo día</span></span></div></a>
+    </div>
+  </div>
+
+  <section data-sec="servicios">
+    <div class="container">
+      <div class="head-row">
+        <div class="sec-head reveal">
+          <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg> Tratamientos</span>
+          <h2>Todo para tu sonrisa <span class="c-pri">en un solo lugar</span></h2>
+          <p>Desde una limpieza hasta implantes, con especialistas en cada área.</p>
+        </div>
+        <a href="tratamientos" class="btn btn-light reveal"><span data-t="ini.svbtn">Ver todos los tratamientos</span> <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="services" id="svcMain" data-limit="6">
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=evaluacion"><img src="https://images.unsplash.com/photo-1663755489920-5e09f66d011a?auto=format&fit=crop&w=700&q=80" alt="Evaluación y diagnóstico" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=evaluacion">Evaluación y diagnóstico</a></h3><p>Revisión completa, radiografía digital y plan de tratamiento con presupuesto claro.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 50</b></div><a href="tratamiento?id=evaluacion" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=limpieza"><img src="https://images.unsplash.com/photo-1681939278218-a755fb2bf2d3?auto=format&fit=crop&w=700&q=80" alt="Limpieza dental (profilaxis)" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/><path d="M19 1v3M17.5 2.5h3"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=limpieza">Limpieza dental (profilaxis)</a></h3><p>Eliminamos sarro y manchas con ultrasonido y pulido. Recomendada cada 6 meses.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 80</b></div><a href="tratamiento?id=limpieza" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=resinas"><img src="https://images.unsplash.com/photo-1681939282781-341ac4f61996?auto=format&fit=crop&w=700&q=80" alt="Curaciones con resina" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/><circle cx="12" cy="8.5" r="2"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=resinas">Curaciones con resina</a></h3><p>Tratamos caries con resinas del color de tu diente, sin metal y en una sola cita.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 90</b></div><a href="tratamiento?id=resinas" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=blanqueamiento"><img src="https://images.unsplash.com/photo-1654373535457-383a0a4d00f9?auto=format&fit=crop&w=700&q=80" alt="Blanqueamiento dental" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=blanqueamiento">Blanqueamiento dental</a></h3><p>Aclara varios tonos tu sonrisa de forma segura, en consultorio o con kit para casa.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 450</b></div><a href="tratamiento?id=blanqueamiento" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=carillas"><img src="https://images.unsplash.com/photo-1785860817740-c95735ba03b1?auto=format&fit=crop&w=700&q=80" alt="Carillas de resina y porcelana" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v6c0 6-3 10-7 10S5 16 5 10z"/><path d="M9 4v7M15 4v7"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=carillas">Carillas de resina y porcelana</a></h3><p>Corrige forma, color y tamaño de tus dientes para una sonrisa armónica.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 350</b></div><a href="tratamiento?id=carillas" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <a class="svc-img" href="tratamiento?id=brackets"><img src="https://images.unsplash.com/photo-1777446899714-c26de766dffd?auto=format&fit=crop&w=700&q=80" alt="Ortodoncia con brackets" loading="lazy" onerror="this.remove()"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="4"/><path d="M2 12h20M7 9.5v5M12 9.5v5M17 9.5v5"/></svg></span></a>
+          <div class="svc-body"><h3><a href="tratamiento?id=brackets">Ortodoncia con brackets</a></h3><p>Brackets metálicos o estéticos para alinear tus dientes. Pagas en cuotas mensuales.</p>
+            <div class="svc-foot"><div class="price"><small>Desde</small><b>S/ 2,500</b></div><a href="tratamiento?id=brackets" class="btn btn-light btn-sm">Ver más <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-soft" data-sec="antes">
+    <div class="container ba-wrap">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:18px"><span class="pill mint"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg> Resultados</span><h2>Sonrisas que <span class="c-pri">cambian vidas</span></h2>
+        <p>Desliza para comparar. Cada tratamiento se planifica a la medida de cada paciente.</p></div>
+        <ul class="checks">
+          <li><span data-t="ini.ba1">Diseño de sonrisa digital antes de empezar</span></li>
+          <li><span data-t="ini.ba2">Blanqueamiento, carillas y ortodoncia</span></li>
+          <li><span data-t="ini.ba3">Resultados naturales, a tu medida</span></li>
+        </ul>
+        <a href="citas?servicio=evaluacion" class="btn btn-pri"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span data-t="ini.babtn">Quiero mi evaluación</span></a>
+      </div>
+      <div class="ba reveal" id="ba" style="--pos:50%">
+        <div class="ba-img ba-after"><img data-ik="ba.despues" src="https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?auto=format&fit=crop&w=900&q=80" alt="Después del tratamiento" loading="lazy" onerror="this.remove()"></div>
+        <div class="ba-img ba-before"><img data-ik="ba.antes" src="https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?auto=format&fit=crop&w=900&q=80" alt="Antes del tratamiento" loading="lazy" onerror="this.remove()"></div>
+        <span class="ba-tag l"><span data-t="ini.baA">Antes</span></span><span class="ba-tag r"><span data-t="ini.baD">Después</span></span>
+        <span class="ba-handle" aria-hidden="true"><i></i></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después" id="baRange">
+        <small class="ba-note"><span data-t="ini.baN">Imagen referencial</span></small>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="portal">
+    <div class="container portal">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:0"><span class="pill mint"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg> Mi Sonrisa</span><h2>Tu tratamiento, <span class="c-pri">en tu celular</span></h2>
+        <p>Con tu código personal ves tus citas, tu plan de tratamiento, tu odontograma, tus cuotas y descargas recibos y recetas.</p></div>
+        <ul class="portal-list">
+          <li><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i><div><b><span data-t="ini.p1t">Tus próximas citas</span></b><span><span data-t="ini.p1s">Día, hora y dentista que te atiende, con cuenta regresiva.</span></span></div></li>
+          <li><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></i><div><b><span data-t="ini.p2t">Odontograma y plan de tratamiento</span></b><span><span data-t="ini.p2s">Mira el estado de cada diente y cuánto avanzaste.</span></span></div></li>
+          <li><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></i><div><b><span data-t="ini.p3t">Cuotas y pagos</span></b><span><span data-t="ini.p3s">Cuánto pagaste, cuánto falta y cuándo vence tu cuota.</span></span></div></li>
+          <li><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></i><div><b><span data-t="ini.p4t">Recibos y recetas en PDF</span></b><span><span data-t="ini.p4s">Descárgalos cuando los necesites.</span></span></div></li>
+        </ul>
+        <a href="mi-sonrisa" class="btn btn-pri"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg> <span data-t="ini.pbtn">Probar con un código demo</span></a>
+      </div>
+      <div class="phone-wrap reveal" aria-hidden="true">
+          <div class="phone"><div class="scr">
+            <div class="p-top"><small>Mi Sonrisa · DC-1024</small><b>Hola, María</b></div>
+            <div class="p-body">
+              <div class="p-next"><small>PRÓXIMA CITA · EN 3 DÍAS</small><b>Control de ortodoncia</b><span>10:30 h · Dra. Andrea Cabanillas</span></div>
+              <div class="p-plan"><div><b>Plan de tratamiento</b><small>3 de 5 listos</small></div><span class="bar"><i style="width:60%"></i></span></div>
+              <div class="p-plan"><div><b>Odontograma</b><small>Actualizado hoy</small></div><div class="p-odo"><div><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#3b82f6"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#ffffff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#ef4444"></i><i style="background:#fff"></i><i style="background:#fff"></i></div><div><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#f59e0b"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#fff"></i><i style="background:#8b5cf6"></i><i style="background:#fff"></i><i style="background:#fff"></i></div></div></div>
+              <div class="p-row"><div><b>Cuota 9 de 24</b><br><small>Vence el 15 · S/ 150</small></div><span class="st warn">Pendiente</span></div>
+              <div class="p-row"><div><b>Limpieza dental</b><br><small>Recibo y receta en PDF</small></div><span class="st ok">Pagado</span></div>
+            </div>
+          </div></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="bg-soft" data-sec="cuotas">
+    <div class="container">
+      <div class="sec-head center reveal"><span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> Facilidades</span><h2>Paga tu tratamiento <span class="c-pri">en cuotas</span></h2>
+        <p>Ortodoncia, implantes y rehabilitación con cuota inicial y pagos mensuales sin intereses.</p></div>
+      <div class="plans">
+        <div class="plan reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="4"/><path d="M2 12h20M7 9.5v5M12 9.5v5M17 9.5v5"/></svg></i><h3><span data-t="ini.q1t">Ortodoncia con brackets</span></h3><p class="plan-p"><span data-t="ini.q1p">S/ 150</span><small><span data-t="ini.q1s">/ mes</span></small></p><span><span data-t="ini.q1d">Inicial S/ 500 · controles incluidos</span></span></div>
+        <div class="plan reveal hl"><span class="plan-tag"><span data-t="ini.q2tag">Más elegido</span></span><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10c0 3-2 5-5 5S7 5 7 2z"/><path d="M9 9h6M9.5 12h5M10 15h4M10.5 18h3M12 7v14"/></svg></i><h3><span data-t="ini.q2t">Implante dental</span></h3><p class="plan-p"><span data-t="ini.q2p">S/ 290</span><small><span data-t="ini.q2s">/ mes</span></small></p><span><span data-t="ini.q2d">10 cuotas · corona incluida</span></span></div>
+        <div class="plan reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c2-3 16-3 18 0v3c-2 5-16 5-18 0z"/><path d="M7 9v4M12 8.5v5M17 9v4"/></svg></i><h3><span data-t="ini.q3t">Alineadores invisibles</span></h3><p class="plan-p"><span data-t="ini.q3p">S/ 450</span><small><span data-t="ini.q3s">/ mes</span></small></p><span><span data-t="ini.q3d">Simulación digital incluida</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="emergencias">
+    <div class="container">
+
+      <div class="emergency reveal" data-emerg>
+        <div class="e-l"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 18h16v3H4zM12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/></svg></i><div><h3>¿Dolor de muela o un diente roto?</h3><p>Te atendemos el mismo día. Escríbenos y te damos la primera cita disponible.</p></div></div>
+        <a class="btn wa-link" href="#"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg> <span data-t="em.btn">Urgencias:</span> <span data-aj="telefono">+51 987 654 321</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-soft" data-sec="tienda">
+    <div class="container">
+      <div class="head-row">
+        <div class="sec-head reveal">
+          <span class="pill coral"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg> Tienda</span>
+          <h2>Lo que recomiendan <span class="c-pri">nuestros dentistas</span></h2>
+          <p>Cepillos, pastas, hilo dental y kits de blanqueamiento. Pide por WhatsApp.</p>
+        </div>
+        <a href="tienda" class="btn btn-light reveal"><span data-t="ini.tibtn">Ir a la tienda</span> <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="products" id="featured"></div>
+    </div>
+  </section>
+
+  <section data-sec="pasos">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg> Así de fácil</span>
+        <h2>Tu cita en <span class="c-pri">4 pasos</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></i><h3><span data-t="ini.s1t">Elige el tratamiento</span></h3><p><span data-t="ini.s1s">O una evaluación si no sabes qué necesitas.</span></p></div>
+        <div class="step reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i><h3><span data-t="ini.s2t">Escoge día y hora</span></h3><p><span data-t="ini.s2s">Solo ves los horarios libres, sin llamar.</span></p></div>
+        <div class="step reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></i><h3><span data-t="ini.s3t">Queda confirmada</span></h3><p><span data-t="ini.s3s">Al instante, y te avisamos por WhatsApp.</span></p></div>
+        <div class="step reveal"><i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></i><h3><span data-t="ini.s4t">Sigue todo en Mi Sonrisa</span></h3><p><span data-t="ini.s4s">Citas, plan, cuotas, recibos y recetas.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-soft" data-sec="testimonios">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="pill coral"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg> Opiniones</span>
+        <h2>Pacientes que <span class="c-pri">vuelven a sonreír</span></h2>
+        <p>Más de 5,000 pacientes confían en nosotros.</p>
+      </div>
+      <div class="testis" data-testis>
+        <figure class="testi reveal"><div class="stars">★★★★★</div><blockquote>"Tenía miedo al dentista y aquí me explicaron todo con paciencia. Mi endodoncia no dolió nada y pude pagar en dos partes."</blockquote>
+          <figcaption class="testi-who"><span class="av">RH</span><div><b>Rosa Huamán</b><span>Paciente de endodoncia</span></div></figcaption></figure>
+        <figure class="testi reveal"><div class="stars">★★★★★</div><blockquote>"Llevo mis brackets con la Dra. Andrea y desde Mi Sonrisa veo cuántas cuotas me faltan y cuándo es mi control. ¡Súper práctico!"</blockquote>
+          <figcaption class="testi-who"><span class="av">DP</span><div><b>Diego Paredes</b><span>Paciente de ortodoncia</span></div></figcaption></figure>
+        <figure class="testi reveal"><div class="stars">★★★★★</div><blockquote>"Mis hijos ya no lloran para ir al dentista. La Dra. Fiorella es un amor y el consultorio es muy limpio."</blockquote>
+          <figcaption class="testi-who"><span class="av">CS</span><div><b>Carmen Salazar</b><span>Mamá de Mateo y Lucía</span></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="faq">
+    <div class="container faq-wrap">
+      <div class="sec-head reveal"><span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg> Dudas</span><h2>Preguntas <span class="c-pri">frecuentes</span></h2><p></p></div>
+      <div class="faq reveal">
+        <details open><summary><span data-t="faq.q1">¿Atienden con seguro o EPS?</span></summary><p><span data-t="faq.a1">Atendemos de forma particular y te damos boleta o factura para que solicites el reembolso a tu seguro.</span></p></details>
+        <details><summary><span data-t="faq.q2">¿Puedo pagar mi tratamiento en cuotas?</span></summary><p><span data-t="faq.a2">Sí. Ortodoncia, implantes y rehabilitación se pagan con una cuota inicial y cuotas mensuales sin intereses.</span></p></details>
+        <details><summary><span data-t="faq.q3">¿Qué es Mi Sonrisa?</span></summary><p><span data-t="faq.a3">Es tu portal: con tu código ves tus citas, tu plan de tratamiento, tu odontograma, tus pagos y descargas recibos y recetas.</span></p></details>
+        <details><summary><span data-t="faq.q4">¿Atienden urgencias?</span></summary><p><span data-t="faq.a4">Sí. Si tienes dolor, un golpe o se rompió un diente, escríbenos por WhatsApp y te damos la primera cita del día.</span></p></details>
+        <details><summary><span data-t="faq.q5">¿Atienden niños?</span></summary><p><span data-t="faq.a5">Sí, tenemos odontopediatra. Los niños pueden venir desde que sale su primer diente.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="cta">
+    <div class="container">
+      <div class="cta reveal">
+        <div>
+          <h2>Agenda tu evaluación hoy</h2>
+          <p>Diagnóstico completo, radiografía y presupuesto por escrito. Reserva en menos de un minuto.</p>
+          <div class="hero-actions">
+            <a href="citas" class="btn btn-white"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span data-t="cta.b1">Reservar cita</span></a>
+            <a href="mi-sonrisa" class="btn btn-glass"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg> <span data-t="cta.b2">Entrar a Mi Sonrisa</span></a>
+          </div>
+        </div>
+        <div class="cta-img"><img data-ik="cta" src="https://images.unsplash.com/photo-1674775372064-8c75d3f8c757?auto=format&fit=crop&w=700&q=80" alt="Paciente sonriendo" loading="lazy" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="pgBloques"></div>
+  <!-- ============ PIE ============ -->
+  <footer>
+    <div class="foot-wave" aria-hidden="true"></div>
+    <div class="container foot">
+      <div>
+        <a href="./" class="brand" data-brand aria-label="Inicio"><span class="paw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><span>Dental<b> Cabanillas</b><small>Odontología integral</small></span></a>
+        <p id="pieTexto">Odontología integral para toda la familia. Especialistas, tecnología digital y tu tratamiento siempre a la mano con Mi Sonrisa.</p>
+        <div class="socials">
+          <a href="#" data-red="facebook" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.8.5-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg></a>
+          <a href="#" data-red="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.5-9.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3 15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3z"/></svg></a>
+          <a href="#" data-red="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4><span data-t="pie.c1">Tratamientos</span></h4>
+        <ul>
+          <li><a href="tratamiento?id=limpieza"><span data-t="pie.c1a">Limpieza dental</span></a></li>
+          <li><a href="tratamiento?id=brackets"><span data-t="pie.c1b">Ortodoncia</span></a></li>
+          <li><a href="tratamiento?id=implantes"><span data-t="pie.c1c">Implantes</span></a></li>
+          <li><a href="tratamiento?id=blanqueamiento"><span data-t="pie.c1d">Blanqueamiento</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-t="pie.c2">Pacientes</span></h4>
+        <ul>
+          <li><a href="citas"><span data-t="pie.c2a">Reservar cita</span></a></li>
+          <li><a href="mi-sonrisa"><span data-t="pie.c2b">Mi Sonrisa</span></a></li>
+          <li><a href="tienda"><span data-t="pie.c2c">Tienda</span></a></li>
+          <li><a href="privacidad"><span data-t="pie.c2d">Aviso de privacidad</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-c">
+        <h4><span data-t="pie.c3">Visítanos</span></h4>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-7.6 8-13a8 8 0 0 0-16 0c0 5.4 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg> <span data-aj="direccion">Av. Arequipa 2450, Lince, Lima</span></span>
+        <a class="wa-link" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> <span data-aj="telefono">+51 987 654 321</span></a>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> <span data-aj="correo">citas@dentalcabanillas.pe</span></span>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span data-aj="horario">Lun a Sáb 9:00 – 20:00 · Dom cerrado</span></span>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <span>© 2026 <span data-nombre>Dental Cabanillas</span> · <span data-eslogan>Odontología integral</span></span>
+      <span>Web creada por <a href="https://ziko.pro" target="_blank" rel="noopener">ziko.pro</a></span>
+    </div>
+  </footer>
+
+  <!-- ============ CARRITO ============ -->
+  <div class="cart-panel" id="cart" aria-label="Carrito de compras">
+    <div class="shade" data-close></div>
+    <aside>
+      <div class="cart-h"><h3>Tu carrito</h3><button class="x-btn" data-close aria-label="Cerrar carrito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-f" id="cartFoot">
+        <div class="deliver">
+          <label><input type="radio" name="entrega" value="Recojo en el consultorio" checked> Recojo en el consultorio</label>
+          <label><input type="radio" name="entrega" value="Delivery"> Delivery</label>
+        </div>
+        <input type="text" id="cName" placeholder="Tu nombre *" aria-label="Tu nombre">
+        <input type="text" id="cAddr" placeholder="Dirección de entrega *" aria-label="Dirección de entrega" style="display:none">
+        <div class="row"><span>Subtotal</span><span id="cSub"></span></div>
+        <div class="row"><span>Entrega</span><span id="cDel"></span></div>
+        <div class="row total"><span>Total</span><span id="cTot"></span></div>
+        <button class="btn btn-pri btn-block" id="cartSend"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg> Pedir por WhatsApp</button>
+        <p class="row" style="justify-content:center;margin:10px 0 0;font-size:.8rem" id="cHint"></p>
+      </div>
+    </aside>
+  </div>
+
+  <a class="wa-float wa-link" href="#" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg></a>
+</body>
+</html>

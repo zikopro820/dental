@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar cita | Dental Cabanillas</title>
+  <meta name="description" content="Reserva tu cita dental online: elige el tratamiento, el día y un horario libre. Confirmación al instante.">
+  <meta name="theme-color" content="#0b6e99">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="firebase-config.js"></script>
+  <script src="datos.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="dental">
+  <div class="demo-note demo-only">Sitio de demostración creado por <a href="https://ziko.pro" target="_blank" rel="noopener"><b>ziko.pro</b></a> · Los datos y precios son de ejemplo.</div>
+  <div class="topbar">
+    <div class="container">
+      <span data-emerg><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18v-6a6 6 0 0 1 12 0v6M4 18h16v3H4zM12 2v2M4.2 5.2l1.4 1.4M19.8 5.2l-1.4 1.4"/></svg> <b><span data-t="top.emerg">Urgencias dentales:</span></b> <a class="wa-link" href="#" data-aj="telefono">+51 987 654 321</a></span>
+      <span class="hide-m"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span data-aj="horario">Lun a Sáb 9:00 – 20:00 · Dom cerrado</span></span>
+      <span class="hide-m"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> <span><span data-t="top.cuotas">Pago en cuotas sin intereses</span></span></span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav">
+      <a href="./" class="brand" data-brand aria-label="Inicio"><span class="paw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><span>Dental<b> Cabanillas</b><small>Odontología integral</small></span></a>
+      <ul class="menu" id="menu">
+        <li><a href="./" data-nav="inicio">Inicio</a></li>
+        <li><a href="tratamientos" data-nav="tratamientos">Tratamientos</a></li>
+        <li><a href="tienda" data-nav="tienda">Tienda</a></li>
+        <li><a href="citas" data-nav="citas" class="active" aria-current="page">Reservar cita</a></li>
+        <li><a href="mi-sonrisa" data-nav="mi-sonrisa">Mi Sonrisa</a></li>
+        <li><a href="nosotros" data-nav="nosotros">Nosotros</a></li>
+        <li><a href="contacto" data-nav="contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="citas" class="btn btn-coral btn-sm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="btn-txt"><span data-t="nav.cta">Reservar cita</span></span></a>
+        <button class="cart-btn" aria-label="Ver carrito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count"></span></button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head" data-ph>
+    <div class="container">
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Citas online</span>
+      <h1>Reserva tu <span class="c-pri">cita dental</span></h1>
+      <p>Elige el tratamiento, el día y un horario libre. Tu cita queda confirmada al instante.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container book">
+      <form class="form-card" id="bookForm" novalidate>
+        <span class="f-label"><span data-t="ci.l1">1. ¿Qué necesitas? *</span></span>
+        <div class="opts" id="svcOpts"></div>
+
+        <span class="f-label"><span data-t="ci.l2">2. ¿Quién es el paciente? *</span></span>
+        <div class="code-row">
+          <input name="codigo" placeholder="¿Ya eres paciente? Tu código (ej. DC-7K3P9)" aria-label="Código de paciente" autocomplete="off">
+          <button type="button" class="btn btn-light btn-sm" id="codeBtn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg> Buscar</button>
+        </div>
+        <p class="code-msg" id="codeMsg"></p>
+        <div class="pet-pick" id="petPick"></div>
+        <input type="hidden" name="mascotaId">
+        <div class="f-grid">
+          <input name="mascota" placeholder="Nombre y apellido del paciente *" required aria-label="Nombre del paciente">
+          <input name="edad" type="number" min="0" max="110" placeholder="Edad (opcional)" aria-label="Edad del paciente">
+        </div>
+        <div class="f-grid" style="margin-top:10px">
+          <select name="preferencia" class="full" aria-label="Dentista de preferencia"><option value=""><span data-t="ci.pref">Cualquier dentista disponible</span></option></select>
+        </div>
+
+        <span class="f-label"><span data-t="ci.l3">3. Elige el día y la hora *</span></span>
+        <div class="f-grid" style="margin-bottom:12px"><input type="date" name="fecha" required aria-label="Fecha de la cita" class="full"></div>
+        <div class="slots" id="slots" tabindex="-1"></div>
+        <div class="slot-legend"><span><i></i>Disponible</span><span class="b"><i></i>Elegido</span></div>
+
+        <span class="f-label"><span data-t="ci.l4">4. Tus datos de contacto *</span></span>
+        <div class="f-grid">
+          <input name="nombre" placeholder="Tu nombre (si es para tu hijo/a, el tuyo) *" required aria-label="Nombre de contacto">
+          <input name="celular" type="tel" inputmode="tel" maxlength="15" placeholder="Celular *" required aria-label="Celular">
+          <input name="motivo" class="full" placeholder="Motivo o síntomas (ej. dolor en una muela)" aria-label="Motivo">
+        </div>
+        <label class="f-check"><input type="checkbox" required> <span>Acepto el <a href="privacidad" target="_blank" style="color:var(--pri);font-weight:700">aviso de privacidad</a> y que <span data-nombre>Dental Cabanillas</span> use mis datos para gestionar la cita y enviarme recordatorios.</span></label>
+        <button type="submit" class="btn btn-pri btn-block" id="bookBtn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> <span data-t="ci.btn">Confirmar mi cita</span></button>
+        <p class="f-msg" role="status"></p>
+      </form>
+      <div class="form-card book-ok" id="bookOk" hidden></div>
+
+      <aside class="summary">
+        <h3><span data-t="ci.sumT">Resumen de tu cita</span></h3>
+        <div class="sum-row"><span>Tratamiento</span><b id="sServ">—</b></div>
+        <div class="sum-row"><span>Paciente</span><b id="sPet">—</b></div>
+        <div class="sum-row"><span>Dentista</span><b id="sDoc">El primero disponible</b></div>
+        <div class="sum-row"><span>Fecha</span><b id="sDate">—</b></div>
+        <div class="sum-row"><span>Hora</span><b id="sHour">—</b></div>
+        <div class="sum-row"><span>Dirección</span><b id="sDir" data-aj="direccion">Av. Arequipa 2450, Lince, Lima</b></div>
+        <div class="sum-total"><span>Precio referencial</span><b id="sPrice">—</b></div>
+        <p class="sum-note"><span data-t="ci.pnota">El presupuesto final se confirma en la evaluación. Puedes pagarlo en cuotas.</span></p>
+        <p class="note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg> <span data-t="ci.note">Tu cita queda confirmada al instante. Te enviaremos un recordatorio por WhatsApp. Llega 10 minutos antes.</span></p>
+        <a href="mi-sonrisa" class="btn btn-glass btn-block"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg> <span data-t="ci.codeBtn">¿Ya tienes código? Ver tus citas</span></a>
+      </aside>
+    </div>
+  </section>
+
+  <div id="pgBloques"></div>
+  <!-- ============ PIE ============ -->
+  <footer>
+    <div class="foot-wave" aria-hidden="true"></div>
+    <div class="container foot">
+      <div>
+        <a href="./" class="brand" data-brand aria-label="Inicio"><span class="paw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.5 1.5 5.5.6 2.5.8 5.5 2 7.5.8 1.3 2.2 1 2.6-.4l.9-3.6c.3-1.2 1.7-1.2 2 0l.9 3.6c.4 1.4 1.8 1.7 2.6.4 1.2-2 1.4-5 2-7.5.5-2 1.5-3.5 1.5-5.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></span><span>Dental<b> Cabanillas</b><small>Odontología integral</small></span></a>
+        <p id="pieTexto">Odontología integral para toda la familia. Especialistas, tecnología digital y tu tratamiento siempre a la mano con Mi Sonrisa.</p>
+        <div class="socials">
+          <a href="#" data-red="facebook" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.8.5-1 1-1h2V2h-3c-3 0-4 2-4 4v2H8v3h2v11h4V11h3l.5-3z"/></svg></a>
+          <a href="#" data-red="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.5-9.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3 15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3z"/></svg></a>
+          <a href="#" data-red="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4><span data-t="pie.c1">Tratamientos</span></h4>
+        <ul>
+          <li><a href="tratamiento?id=limpieza"><span data-t="pie.c1a">Limpieza dental</span></a></li>
+          <li><a href="tratamiento?id=brackets"><span data-t="pie.c1b">Ortodoncia</span></a></li>
+          <li><a href="tratamiento?id=implantes"><span data-t="pie.c1c">Implantes</span></a></li>
+          <li><a href="tratamiento?id=blanqueamiento"><span data-t="pie.c1d">Blanqueamiento</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-t="pie.c2">Pacientes</span></h4>
+        <ul>
+          <li><a href="citas"><span data-t="pie.c2a">Reservar cita</span></a></li>
+          <li><a href="mi-sonrisa"><span data-t="pie.c2b">Mi Sonrisa</span></a></li>
+          <li><a href="tienda"><span data-t="pie.c2c">Tienda</span></a></li>
+          <li><a href="privacidad"><span data-t="pie.c2d">Aviso de privacidad</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-c">
+        <h4><span data-t="pie.c3">Visítanos</span></h4>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-7.6 8-13a8 8 0 0 0-16 0c0 5.4 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg> <span data-aj="direccion">Av. Arequipa 2450, Lince, Lima</span></span>
+        <a class="wa-link" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> <span data-aj="telefono">+51 987 654 321</span></a>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> <span data-aj="correo">citas@dentalcabanillas.pe</span></span>
+        <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span data-aj="horario">Lun a Sáb 9:00 – 20:00 · Dom cerrado</span></span>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <span>© 2026 <span data-nombre>Dental Cabanillas</span> · <span data-eslogan>Odontología integral</span></span>
+      <span>Web creada por <a href="https://ziko.pro" target="_blank" rel="noopener">ziko.pro</a></span>
+    </div>
+  </footer>
+
+  <!-- ============ CARRITO ============ -->
+  <div class="cart-panel" id="cart" aria-label="Carrito de compras">
+    <div class="shade" data-close></div>
+    <aside>
+      <div class="cart-h"><h3>Tu carrito</h3><button class="x-btn" data-close aria-label="Cerrar carrito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-f" id="cartFoot">
+        <div class="deliver">
+          <label><input type="radio" name="entrega" value="Recojo en el consultorio" checked> Recojo en el consultorio</label>
+          <label><input type="radio" name="entrega" value="Delivery"> Delivery</label>
+        </div>
+        <input type="text" id="cName" placeholder="Tu nombre *" aria-label="Tu nombre">
+        <input type="text" id="cAddr" placeholder="Dirección de entrega *" aria-label="Dirección de entrega" style="display:none">
+        <div class="row"><span>Subtotal</span><span id="cSub"></span></div>
+        <div class="row"><span>Entrega</span><span id="cDel"></span></div>
+        <div class="row total"><span>Total</span><span id="cTot"></span></div>
+        <button class="btn btn-pri btn-block" id="cartSend"><svg style="width:20px;height:20px;fill:currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg> Pedir por WhatsApp</button>
+        <p class="row" style="justify-content:center;margin:10px 0 0;font-size:.8rem" id="cHint"></p>
+      </div>
+    </aside>
+  </div>
+
+  <a class="wa-float wa-link" href="#" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg></a>
+</body>
+</html>
